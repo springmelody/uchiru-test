@@ -121,3 +121,5 @@ make test # run tests
    ```sql 
    SELECT COUNT(*) as count FROM students WHERE parent_id is NULL
    ```
+   
+### [Ссылка на блог](https://github.com/springmelody/uchiru-test-bog)
