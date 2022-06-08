@@ -81,3 +81,43 @@ make test # run tests
      добавьте возможность юзеру завершить работу программы
     * консольная программа **/lib/console_lightforward.rb**
 
+5) Обязательное задание
+   Есть таблица students с колонками
+   ```sql
+   id int
+   name varchar
+   created_at datetime
+   parent_id int
+   ```
+   a) посчитайте количество всех студентов
+   ```sql 
+   SELECT COUNT(*) as count FROM students
+   ```
+   
+   b) посчитайте количество студентов с именем Иван
+   ```sql
+   SELECT COUNT(*) as count FROM students WHERE name = 'Иван'
+   ```
+   c) посчитайте количество студентов созданных после 1 сентября 2020 года
+   ```sql
+   SELECT COUNT(*) as count FROM students WHERE created_at > '2020-09-01 12:00:00'
+   ```
+
+6) Необязательное задание, но его выполнение будет плюсом.Так же есть таблица parents (см задание 5)
+   ```sql
+   id int
+   name varchar
+   created_at datetime
+   ```
+   a) посчитайте количество студентов с родителями
+   ```sql 
+    SELECT COUNT(parent_id) as count FROM students 
+   ```
+   b) посчитайте количество студентов с родителями при том что имя родителя Марина
+   ```sql 
+   SELECT COUNT(*) as count FROM students JOIN parents ON parents.id = students.parent_id WHERE parents.name = 'Марина'
+   ```
+   c) посчитайте количество студентов без родителя
+   ```sql 
+   SELECT COUNT(*) as count FROM students WHERE parent_id is NULL
+   ```
